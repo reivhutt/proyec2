@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Form</title>
+    <script>
+        function validarFormulario() {
+            var marca = document.forms["registroForm"]["txtMarca"].value;
+            var modelo = document.forms["registroForm"]["txtModelo"].value;
+            var motor = document.forms["registroForm"]["txtMotor"].value;
+            var chasis = document.forms["registroForm"]["txtChasis"].value;
+            var color = document.forms["registroForm"]["txtColor"].value;
+            var peso = document.forms["registroForm"]["txtPeso"].value;
+            var precio = document.forms["registroForm"]["txtPrecio"].value;
+
+            if (marca === "" || modelo === "" || motor === "" || chasis === "" || color === "" || peso === "" || precio === "") {
+                alert("Por favor, complete todos los campos.");
+                return false;
+            }
+
+            // Puedes agregar más validaciones según tus requisitos.
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <!---cabecera-->
+    <div>
+        <header class="enca"> <!---barra-->
+            <div class="wrap"> <!---dentro del encabezado-->
+                <div class="logos"> <!---titulo-->
+                    Mildred ZHN
+                </div>
+                <nav> <!--botones-->
+                    <a href="mostrar.php">Inicio</a>
+                    <a href="mostrar.php">Tabla</a>
+                    <a href="index.html">Registrar</a>
+                </nav>
+            </div>
+        </header>
+    </div><br><br><br>
+    <!---formulario-->
+    <div class="modal-body modal-dialog">
+        <div class="container col-lg-11">
+            <div class="modal-content col-lg-9 bg-dark">
+                <!---botones de cambio-->
+                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!---hasta aqui-->
+                <br>
+                <h1 class="text-center blanco">Registro</h1>
+                <!-----------------------formulario-------------------------------->
+                <form class="table table-success table-striped" name="registroForm" action="registro.php" method="POST" onsubmit="return validarFormulario()">
+                    <div class="mb-3"><br>
+                      <label for="exampleInputEmail1" class="form-label blanco">Marca</label>
+                      <input type="text" class="form-control  bg-light" name="txtMarca" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label blanco">Modelo</label>
+                        <input type="text" class="form-control bg-light " name="txtModelo" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label blanco">Motor</label>
+                        <input type="text" class="form-control bg-light " name="txtMotor" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label blanco">Chasis</label>
+                        <input type="text" class="form-control bg-light " name="txtChasis" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label blanco">Color</label>
+                        <input type="text" class="form-control bg-light " name="txtColor" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label blanco">Peso</label>
+                        <input type="text" class="form-control bg-light " name="txtPeso" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label blanco">Precio</label>
+                        <input type="text" class="form-control bg-light " name="txtPrecio" >
+                    </div>
+                    <center>
+                        <div id="emailHelp" class="verde">Verifique los datos proporcionados</div>
+                    </center>
+                    <br>
+                    <center> 
+                        <button type="submit" class="btn btn-success">Registrar</button>
+                    </center>
+                </form><br>
+                <!---hasta aqui form-->
+            </div>
+        </div> 
+    </div>
+     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
